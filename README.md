@@ -32,7 +32,7 @@ On older Claude Code versions, run this instead:
 /plugin install ava@ava
 ```
 
-Start a new Claude Code session and Ava greets you with her banner (once, in color). The first time she speaks, she downloads her voice in the background (about 470 MB, one time, into `~/.cache/ava`). Until it's ready she uses the built-in macOS voice, so she's never silent.
+Every new Claude Code session opens with her banner, in color. The first time she speaks, she downloads her voice in the background (about 470 MB, one time, into `~/.cache/ava`). Until it's ready she uses the built-in macOS voice, so she's never silent.
 
 ## Her voice
 
@@ -148,7 +148,7 @@ skills/ava/SKILL.md            what Ava says and how she says it
 skills/ava/scripts/speak.sh    speaks text in the background (Kokoro, or macOS say until it's ready)
 skills/ava/scripts/stop.sh     stops her mid-sentence
 skills/ava/scripts/done.sh     the after-task line, run by a Stop hook
-skills/ava/scripts/welcome.sh  the banner, shown once by a SessionStart hook
+skills/ava/scripts/welcome.sh  the banner, shown by a SessionStart hook on every new session
 hooks/hooks.json               registers both hooks
 ```
 
