@@ -1,5 +1,14 @@
 # Ava
 
+```
+ █████╗ ██╗   ██╗ █████╗
+██╔══██╗██║   ██║██╔══██╗
+███████║██║   ██║███████║
+██╔══██║╚██╗ ██╔╝██╔══██║
+██║  ██║ ╚████╔╝ ██║  ██║
+╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝
+```
+
 A [Claude Code](https://code.claude.com) plugin that talks back.
 
 When Claude finishes building something, ask Ava. She writes a clear debrief in the chat, then says the short version out loud in a natural voice, so you can hear what happened without reading a wall of terminal output. She also says one line on her own after every task.
@@ -23,7 +32,7 @@ On older Claude Code versions, run this instead:
 /plugin install ava@ava
 ```
 
-That's it. The first time Ava speaks, she downloads her voice in the background (about 470 MB, one time, into `~/.cache/ava`). Until it's ready she uses the built-in macOS voice, so she's never silent.
+Start a new Claude Code session and Ava greets you with her banner (once, in color). The first time she speaks, she downloads her voice in the background (about 470 MB, one time, into `~/.cache/ava`). Until it's ready she uses the built-in macOS voice, so she's never silent.
 
 ## Her voice
 
@@ -139,7 +148,8 @@ skills/ava/SKILL.md          what Ava says and how she says it
 skills/ava/scripts/speak.sh  speaks text in the background (Kokoro, or macOS say until it's ready)
 skills/ava/scripts/stop.sh   stops her mid-sentence
 skills/ava/scripts/done.sh   the after-task line, run by a Stop hook
-hooks/hooks.json             registers that hook
+skills/ava/scripts/welcome.sh  the banner, shown once by a SessionStart hook
+hooks/hooks.json             registers both hooks
 ```
 
 The skill tells Claude to:
