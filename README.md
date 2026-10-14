@@ -129,3 +129,7 @@ Ava is a single [`SKILL.md`](SKILL.md) file. It tells Claude to:
 - macOS for the voice. On other systems Ava still writes the debrief, just silently.
 - Claude Code.
 - Ava only knows about commands Claude ran, plus ones you run inside Claude Code with `!`. She can't see output from your other terminal windows. Paste it in, or rerun the command with `!`.
+
+## License
+
+[MIT](LICENSE)
