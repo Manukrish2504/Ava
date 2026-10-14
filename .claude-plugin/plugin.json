@@ -1,0 +1,8 @@
+{
+  "name": "ava",
+  "description": "Ava talks back: spoken debriefs after Claude Code tasks, in a natural Kokoro voice.",
+  "version": "1.0.0",
+  "author": { "name": "Manu Shresth" },
+  "homepage": "https://github.com/Manukrish2504/Ava",
+  "license": "MIT"
+}

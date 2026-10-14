@@ -1,0 +1,14 @@
+{
+  "name": "ava",
+  "description": "Ava, a Claude Code plugin that talks back after every task.",
+  "owner": {
+    "name": "Manu Shresth"
+  },
+  "plugins": [
+    {
+      "name": "ava",
+      "source": "./",
+      "description": "Ava talks back: spoken debriefs after Claude Code tasks, in a natural Kokoro voice."
+    }
+  ]
+}

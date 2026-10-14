@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}\"/skills/ava/scripts/done.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
