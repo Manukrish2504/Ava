@@ -11,10 +11,13 @@ input="$(cat)"
 line=""
 if command -v jq >/dev/null; then
   [ "$(printf '%s' "$input" | jq -r '.stop_hook_active // false')" = true ] && exit 0
-  # First non-empty, non-heading line, minus markdown, cut at the end of the first sentence.
+  # First paragraph (headings skipped), split into sentences at . ! ? or a colon. Take the first
+  # sentence without a command or path in backticks (those sound awful read aloud), minus markdown.
   line=$(printf '%s' "$input" | jq -r '.last_assistant_message // ""' |
-    awk 'NF && !/^[[:space:]]*#/ { print; exit }' |
-    sed -E 's/\[([^]]*)\]\([^)]*\)/\1/g; s/[`*#>|]//g; s/^[[:space:]-]+//; s/([.!?])[[:space:]].*/\1/')
+    awk '/^[[:space:]]*#/ { next } NF { seen = 1; print; next } seen { exit }' | tr '\n' ' ' |
+    awk '{ gsub(/[.!?:][[:space:]]+/, "&\n"); print }' |
+    grep -vE '`[^`]*[[:space:]<>/][^`]*`' | awk 'NF { print; exit }' |
+    sed -E 's/\[([^]]*)\]\([^)]*\)/\1/g; s/[`*#>|]//g; s/^[[:space:]-]+//; s/[[:space:]]+$//; s/:$/./')
 fi
 [ -n "$line" ] && [ ${#line} -le 200 ] || line="Done."
 
