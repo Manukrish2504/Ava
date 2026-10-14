@@ -144,12 +144,12 @@ You don't have to say "ava". Any of these work after a task:
 ## How it works
 
 ```
-skills/ava/SKILL.md          what Ava says and how she says it
-skills/ava/scripts/speak.sh  speaks text in the background (Kokoro, or macOS say until it's ready)
-skills/ava/scripts/stop.sh   stops her mid-sentence
-skills/ava/scripts/done.sh   the after-task line, run by a Stop hook
+skills/ava/SKILL.md            what Ava says and how she says it
+skills/ava/scripts/speak.sh    speaks text in the background (Kokoro, or macOS say until it's ready)
+skills/ava/scripts/stop.sh     stops her mid-sentence
+skills/ava/scripts/done.sh     the after-task line, run by a Stop hook
 skills/ava/scripts/welcome.sh  the banner, shown once by a SessionStart hook
-hooks/hooks.json             registers both hooks
+hooks/hooks.json               registers both hooks
 ```
 
 The skill tells Claude to:
